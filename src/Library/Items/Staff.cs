@@ -1,6 +1,8 @@
+using Library;
+
 namespace RoleplayGame
 {
-    public class Staff
+    public class Staff : IAttackItem, IDefenseValue
     {
         public int AttackValue 
         {

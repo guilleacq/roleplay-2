@@ -2,7 +2,7 @@ using Library;
 
 namespace RoleplayGame
 {
-    public class Spell
+    public class Spell : IAttackItem, IDefenseItem
     {
         public int AttackValue 
         {
