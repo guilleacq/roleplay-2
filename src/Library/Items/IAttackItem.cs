@@ -1,11 +1,11 @@
 
 namespace Library
 {
-    public interface IItem
+    public interface IAttackItem
     {
         public int AttackValue {get;}
         
-        public int DefenseValue{get;}
+
 
     }
 }
