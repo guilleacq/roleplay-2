@@ -3,7 +3,7 @@ using Library;
 
 namespace RoleplayGame
 {
-    public class SpellsBook : IAttackItem, IDefenseItem 
+    public class SpellsBook : IAttackItem, IDefenseItem, IMagicItem 
     {
         public Spell[] Spells { get; set; }
         
