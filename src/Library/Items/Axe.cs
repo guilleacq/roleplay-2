@@ -2,7 +2,7 @@ using Library;
 
 namespace RoleplayGame
 {
-    public class Axe : IItem
+    public class Axe 
     {
         public int AttackValue
         {

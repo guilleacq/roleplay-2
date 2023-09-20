@@ -1,8 +1,10 @@
+using Library;
+
 namespace RoleplayGame
 {
     public class Spell
     {
-        public int AttackValue
+        public int AttackValue 
         {
             get
             {

@@ -1,7 +1,7 @@
 
-namespace Library
+namespace RoleplayGame
 {
-    public interface IDefense        
+    public interface IDefenseItem        
     {
        public int DefenseValue{get;}
         
