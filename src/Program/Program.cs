@@ -7,6 +7,10 @@ namespace Program
     {
         static void Main(string[] args)
         {
+            Axe axe = new Axe();
+            Helmet helmet = new Helmet();
+            Shield shield = new Shield();
+
             SpellsBook book = new SpellsBook();
             book.Spells = new Spell[]{ new Spell() };
 
@@ -15,9 +19,9 @@ namespace Program
             gandalf.SpellsBook = book;
 
             Dwarf gimli = new Dwarf("Gimli");
-            gimli.Axe = new Axe();
-            gimli.Helmet = new Helmet();
-            gimli.Shield = new Shield();
+            gimli.AddAttackItem(axe);
+            gimli.AddDefenseItem(helmet);
+            gimli.AddDefenseItem(shield);
 
             Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
             Console.WriteLine($"Gandalf attacks Gimli with ⚔️ {gandalf.AttackValue}");

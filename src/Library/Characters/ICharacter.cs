@@ -1,4 +1,6 @@
 
+using RoleplayGame;
+
 namespace Library
 {
     public interface ICharacter
@@ -9,6 +11,9 @@ namespace Library
         public int Health {get;}
         public void ReceiveAttack(int power);
         public void Cure();
+
+        public void AddDefenseItem(IDefenseItem item);
+        public void AddAttackItem(IAttackItem item);
 
     }
 }

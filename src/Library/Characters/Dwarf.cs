@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Library;
 
 namespace RoleplayGame
@@ -12,18 +13,20 @@ namespace RoleplayGame
         }
 
         public string Name { get; set; }
-
-        public Axe Axe { get; set; }
-
-        public Shield Shield { get; set; }
-
-        public Helmet Helmet { get; set; }
+        private List<IAttackItem> attackItems;
+        private List<IDefenseItem> defenseItems;
 
         public int AttackValue
         {
             get
             {
-                return Axe.AttackValue;
+                int attack = 0;
+                foreach (var item in attackItems)
+                {
+                    attack += item.AttackValue;
+                }
+
+                return attack;
             }
         }
 
@@ -31,7 +34,13 @@ namespace RoleplayGame
         {
             get
             {
-                return Shield.DefenseValue + Helmet.DefenseValue;
+                int defense = 0;
+                foreach (var item in defenseItems)
+                {
+                    defense += item.DefenseValue;
+                }
+
+                return defense;
             }
         }
 
@@ -58,6 +67,16 @@ namespace RoleplayGame
         public void Cure()
         {
             this.Health = 100;
+        }
+
+        public void AddDefenseItem(IDefenseItem item)
+        {
+            defenseItems.Add(item);
+        }
+
+        public void AddAttackItem(IAttackItem item)
+        {
+            attackItems.Add(item);
         }
     }
 }
