@@ -9,5 +9,13 @@ namespace RoleplayGame
                 return 18;
             }
         }
+
+        public int AttackValue
+        {
+            get
+            {
+                return 0;
+            }
+        }
     }
 }
