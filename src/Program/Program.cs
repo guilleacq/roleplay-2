@@ -1,4 +1,5 @@
 ﻿using System;
+using Library;
 using RoleplayGame;
 
 namespace Program
@@ -7,9 +8,12 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Axe axe = new Axe();
-            Helmet helmet = new Helmet();
-            Shield shield = new Shield();
+            IAttackItem axe = new Axe();
+            IDefenseItem helmet = new Helmet();
+            IDefenseItem shield = new Shield();
+
+            IAttackItem sword = new Sword();
+            IDefenseItem armor = new Armor();
 
             SpellsBook book = new SpellsBook();
             book.Spells = new Spell[]{ new Spell() };
@@ -22,6 +26,12 @@ namespace Program
             gimli.AddAttackItem(axe);
             gimli.AddDefenseItem(helmet);
             gimli.AddDefenseItem(shield);
+
+            Knight darkknight = new Knight("Dark Knight");
+            darkknight.AddAttackItem(sword);
+            darkknight.AddDefenseItem(shield);
+            darkknight.AddDefenseItem(armor);
+
 
             Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
             Console.WriteLine($"Gandalf attacks Gimli with ⚔️ {gandalf.AttackValue}");

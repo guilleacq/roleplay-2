@@ -1,8 +1,10 @@
 using Library;
+using System.Collections.Generic;
+
 
 namespace RoleplayGame
 {
-    public class Knight : ICharacter  
+    public class Knight : ICharacter
     {
         private int health = 100;
 
@@ -13,17 +15,26 @@ namespace RoleplayGame
 
         public string Name { get; set; }
 
-        public Sword Sword { get; set; }
+        // public Sword Sword { get; set; }
 
-        public Shield Shield { get; set; }
+        // public Shield Shield { get; set; }
 
-        public Armor Armor { get; set; }
+        // public Armor Armor { get; set; }
+
+        private List<IAttackItem> attackItems;
+        private List<IDefenseItem> defenseItems;
 
         public int AttackValue
         {
             get
             {
-                return Sword.AttackValue;
+                int attack = 0;
+                foreach (var item in attackItems)
+                {
+                    attack += item.AttackValue;
+                }
+
+                return attack;
             }
         }
 
@@ -31,7 +42,13 @@ namespace RoleplayGame
         {
             get
             {
-                return Armor.DefenseValue + Shield.DefenseValue;
+                int defense = 0;
+                foreach (var item in defenseItems)
+                {
+                    defense += item.DefenseValue;
+                }
+
+                return defense;
             }
         }
 
@@ -58,6 +75,16 @@ namespace RoleplayGame
         public void Cure()
         {
             this.Health = 100;
+        }
+
+        public void AddDefenseItem(IDefenseItem item)
+        {
+            defenseItems.Add(item);
+        }
+
+        public void AddAttackItem(IAttackItem item)
+        {
+            attackItems.Add(item);
         }
     }
 }
