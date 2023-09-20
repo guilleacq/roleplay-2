@@ -32,6 +32,9 @@ namespace Program
             darkknight.AddDefenseItem(shield);
             darkknight.AddDefenseItem(armor);
 
+            Archer santiarcher = new Archer("Santi Archer");
+            santiarcher.AddAttackItem(axe);
+            santiarcher.AddDefenseItem(shield);
 
             Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
             Console.WriteLine($"Gandalf attacks Gimli with ⚔️ {gandalf.AttackValue}");
