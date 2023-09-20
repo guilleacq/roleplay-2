@@ -1,6 +1,8 @@
+using Library;
+
 namespace RoleplayGame
 {
-    public class Sword
+    public class Sword : IAttackItem
     {
         public int AttackValue
         {
@@ -10,12 +12,5 @@ namespace RoleplayGame
             }
         }
 
-        public int DefenseValue
-        {
-            get
-            {
-                return 0;
-            }
-        }
     }
 }
