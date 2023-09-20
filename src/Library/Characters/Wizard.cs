@@ -1,4 +1,5 @@
 using Library;
+using System.Collections.Generic;
 
 namespace RoleplayGame
 {
@@ -15,13 +16,22 @@ namespace RoleplayGame
 
         public SpellsBook SpellsBook { get; set; }
 
-        public Staff Staff { get; set; }
-
+        // public Staff Staff { get; set; }
+        private List<IAttackItem> attackItems;
+        private List<IDefenseItem> defenseItems;
+        private List<IMagicItem> magicItems;
+        
         public int AttackValue
         {
             get
             {
-                return SpellsBook.AttackValue + Staff.AttackValue;
+                int attack = 0;
+                foreach (var item in attackItems)
+                {
+                    attack += item.AttackValue;
+                }
+
+                return attack;
             }
         }
 
@@ -29,7 +39,13 @@ namespace RoleplayGame
         {
             get
             {
-                return SpellsBook.DefenseValue + Staff.DefenseValue;
+                int defense = 0;
+                foreach (var item in defenseItems)
+                {
+                    defense += item.DefenseValue;
+                }
+
+                return defense;
             }
         }
 
@@ -56,6 +72,21 @@ namespace RoleplayGame
         public void Cure()
         {
             this.Health = 100;
+        }
+
+        public void AddDefenseItem(IDefenseItem item)
+        {
+            defenseItems.Add(item);
+        }
+
+        public void AddAttackItem(IAttackItem item)
+        {
+            attackItems.Add(item);
+        }
+
+        public void AddMagicItem(IMagicItem item)
+        {
+            magicItems.Add(item);
         }
     }
 }

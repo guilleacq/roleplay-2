@@ -14,13 +14,14 @@ namespace Program
 
             IAttackItem sword = new Sword();
             IDefenseItem armor = new Armor();
+            IMagicItem staff = new Staff();
 
             SpellsBook book = new SpellsBook();
             book.Spells = new Spell[]{ new Spell() };
 
             Wizard gandalf = new Wizard("Gandalf");
-            gandalf.Staff = new Staff();
             gandalf.SpellsBook = book;
+            gandalf.AddMagicItem(staff);
 
             Dwarf gimli = new Dwarf("Gimli");
             gimli.AddAttackItem(axe);
