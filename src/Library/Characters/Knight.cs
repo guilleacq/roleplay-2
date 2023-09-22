@@ -7,22 +7,17 @@ namespace RoleplayGame
     public class Knight : ICharacter
     {
         private int health = 100;
-
+        private List<IAttackItem> attackItems;
+        private List<IDefenseItem> defenseItems;
+        public string Name { get; set; }
         public Knight(string name)
         {
             this.Name = name;
+            attackItems = new List<IAttackItem>();
+            defenseItems = new List<IDefenseItem>();
         }
 
-        public string Name { get; set; }
 
-        // public Sword Sword { get; set; }
-
-        // public Shield Shield { get; set; }
-
-        // public Armor Armor { get; set; }
-
-        private List<IAttackItem> attackItems;
-        private List<IDefenseItem> defenseItems;
 
         public int AttackValue
         {

@@ -6,16 +6,15 @@ namespace RoleplayGame
     public class Archer : ICharacter
     {
         private int health = 100;
-
+        private List<IAttackItem> attackItems;
+        private List<IDefenseItem> defenseItems;
+        public string Name { get; set; }
         public Archer(string name)
         {
             this.Name = name;
+            attackItems = new List<IAttackItem>();
+            defenseItems = new List<IDefenseItem>();
         }
-
-        public string Name { get; set; }
-        
-        private List<IAttackItem> attackItems;
-        private List<IDefenseItem> defenseItems;
         public int AttackValue
         {
             get

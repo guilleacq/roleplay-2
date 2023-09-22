@@ -6,20 +6,18 @@ namespace RoleplayGame
     public class Wizard : ICharacter
     {
         private int health = 100;
-
-        public Wizard(string name)
-        {
-            this.Name = name;
-        }
-
-        public string Name { get; set; }
-
-        public SpellsBook SpellsBook { get; set; }
-
-        // public Staff Staff { get; set; }
         private List<IAttackItem> attackItems;
         private List<IDefenseItem> defenseItems;
         private List<IMagicItem> magicItems;
+        public string Name { get; set; }
+        public SpellsBook SpellsBook { get; set; }
+        public Wizard(string name)
+        {
+            this.Name = name;
+            attackItems = new List<IAttackItem>();
+            defenseItems = new List<IDefenseItem>();
+            magicItems = new List<IMagicItem>();
+        }
         
         public int AttackValue
         {

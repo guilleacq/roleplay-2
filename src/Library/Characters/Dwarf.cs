@@ -6,15 +6,17 @@ namespace RoleplayGame
     public class Dwarf : ICharacter
     {
         private int health = 100;
+        public string Name { get; set; }
+        private List<IAttackItem> attackItems;
+        private List<IDefenseItem> defenseItems;
 
         public Dwarf(string name)
         {
             this.Name = name;
+            attackItems = new List<IAttackItem>();
+            defenseItems = new List<IDefenseItem>();
         }
 
-        public string Name { get; set; }
-        private List<IAttackItem> attackItems;
-        private List<IDefenseItem> defenseItems;
 
         public int AttackValue
         {
